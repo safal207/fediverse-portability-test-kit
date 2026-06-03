@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/safal207/fediverse-portability-test-kit/schemas/portability-report.schema.json",
+  "title": "Fediverse Portability Test Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tool",
+    "service",
+    "scenario",
+    "overall_result",
+    "checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "service": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"type": "string"},
+        "version": {"type": "string"},
+        "url": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "overall_result": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "PARTIAL", "SKIP"]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "passed": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0},
+        "partial": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "result", "description"],
+        "properties": {
+          "id": {"type": "string"},
+          "result": {
+            "type": "string",
+            "enum": ["PASS", "FAIL", "PARTIAL", "SKIP"]
+          },
+          "description": {"type": "string"},
+          "expected": {"type": "string"},
+          "actual": {"type": "string"},
+          "evidence": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "reproduction": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}
