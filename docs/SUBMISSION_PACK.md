@@ -31,6 +31,10 @@ Strict CI mode:
 fediverse-portability-test run --fixture mastodon-like --fail-on-partial
 ```
 
+## CI status
+
+GitHub Actions workflow `Tests` was manually checked from the GitHub UI and reported green before submission preparation continued.
+
 ## What already exists
 
 - Runnable local synthetic fixture CLI
@@ -111,13 +115,19 @@ The requested grant would turn the current runnable skeleton into a stronger ope
 
 ## Submission readiness status
 
-Current status: close to submission-ready, pending final manual review.
+Current status: close to submission-ready, pending final applicant review.
 
-Open pre-submit tasks:
+Confirmed pre-submit evidence:
 
-- confirm GitHub Actions/check status from the GitHub UI;
+- GitHub Actions workflow `Tests` reported green in the GitHub UI.
+- Local runnable proof is documented.
+- Schema validation is part of the test suite.
+- Strict CI mode is implemented.
+
+Remaining pre-submit tasks:
+
 - review `docs/NLNET_FORM_ANSWERS.md` field by field;
 - publish or prepare outreach message;
-- capture any external feedback;
+- capture any external feedback if available before submission;
 - remove or soften unsupported claims;
 - submit only after final applicant review.
