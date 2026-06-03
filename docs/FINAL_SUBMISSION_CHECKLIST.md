@@ -27,7 +27,7 @@ python -m pip install -r requirements-dev.txt
 python -m unittest discover -s tests -p 'test_*.py'
 ```
 
-- [ ] GitHub Actions is green on `main`.
+- [ ] GitHub Actions is green on `main` after the latest pre-submission commit.
 - [ ] `examples/public-report-summary.md` is readable by non-technical reviewers.
 - [ ] `docs/COMPATIBILITY_MATRIX_TEMPLATE.md` exists.
 - [ ] `CONTRIBUTING.md` exists.
@@ -39,7 +39,7 @@ python -m unittest discover -s tests -p 'test_*.py'
 - [ ] `docs/BUDGET_AND_MILESTONES.md` matches the requested amount.
 - [ ] `docs/EXISTING_EFFORTS.md` explains how this differs from existing work.
 - [ ] `docs/ROADMAP_TO_REAL_ADAPTER.md` avoids overclaiming real-service support.
-- [ ] `docs/GENAI_DISCLOSURE.md` is accurate.
+- [ ] `docs/GENAI_DISCLOSURE.md` is accurate and includes model, dates, purpose, and prompt provenance summary.
 
 ## Scope and claims
 
@@ -54,6 +54,8 @@ python -m unittest discover -s tests -p 'test_*.py'
 
 - [ ] Requested amount is EUR 40,000.
 - [ ] Milestones add up to EUR 40,000.
+- [ ] Budget includes effort/rate explanation.
+- [ ] Other funding sources are disclosed.
 - [ ] Milestones have acceptance checks.
 - [ ] Milestones are realistic for a small open-source QA toolkit.
 - [ ] Pre-grant baseline is separated from grant deliverables.
