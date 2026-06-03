@@ -28,5 +28,8 @@ classifiers = [
 [project.scripts]
 fediverse-portability-test = "fediverse_portability_test.cli:main"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
 where = ["src"]
