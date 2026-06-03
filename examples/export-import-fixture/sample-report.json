@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "fediverse-portability-test-kit",
+    "version": "0.1.0-dev"
+  },
+  "service": {
+    "name": "mastodon-like-fixture",
+    "type": "local-fixture",
+    "version": "0.1"
+  },
+  "scenario": "export_import_roundtrip",
+  "overall_result": "PARTIAL",
+  "started_at": "2026-06-03T00:00:00Z",
+  "finished_at": "2026-06-03T00:00:03Z",
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "partial": 1,
+    "skipped": 0
+  },
+  "checks": [
+    {
+      "id": "export_available",
+      "result": "PASS",
+      "description": "The fixture account export can be produced and parsed.",
+      "expected": "Export archive exists and is readable.",
+      "actual": "Fixture export archive parsed successfully."
+    },
+    {
+      "id": "public_posts_preserved",
+      "result": "PASS",
+      "description": "Public posts survive export/import roundtrip.",
+      "expected": "10 public posts restored.",
+      "actual": "10 public posts restored."
+    },
+    {
+      "id": "media_integrity",
+      "result": "PASS",
+      "description": "Media files survive export/import roundtrip with matching digests.",
+      "expected": "5 media attachments restored with matching hashes.",
+      "actual": "5 media attachments restored with matching hashes."
+    },
+    {
+      "id": "private_visibility_preserved",
+      "result": "PASS",
+      "description": "Private and followers-only posts do not become public after restore.",
+      "expected": "Private visibility labels preserved.",
+      "actual": "Private visibility labels preserved."
+    },
+    {
+      "id": "deleted_content_not_restored",
+      "result": "PASS",
+      "description": "Deleted content does not reappear after import.",
+      "expected": "Deleted post marker remains deleted.",
+      "actual": "Deleted post marker remains deleted."
+    },
+    {
+      "id": "follower_graph_preserved",
+      "result": "PARTIAL",
+      "description": "Follower/following relationships are preserved or reported as partial.",
+      "expected": "5 followers and 4 following relationships restored.",
+      "actual": "5 followers restored; following relationships require manual confirmation.",
+      "reproduction": "Run export_import_roundtrip with the mastodon-like fixture and inspect relationship comparison output."
+    }
+  ],
+  "notes": [
+    "This is a synthetic fixture report for reviewer orientation.",
+    "It does not claim real Mastodon compatibility yet."
+  ]
+}
