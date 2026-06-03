@@ -1,0 +1,24 @@
+$ python -m pip install -e .
+$ fediverse-portability-test run --fixture mastodon-like --output portability-report.json
+
+Export/import roundtrip: PASS
+Media integrity: PASS
+Private visibility: PASS
+Deleted content safety: PASS
+Follower graph: PARTIAL
+
+Overall: PARTIAL
+Report: portability-report.json
+
+$ fediverse-portability-test run --fixture mastodon-like --fail-on-partial
+
+Export/import roundtrip: PASS
+Media integrity: PASS
+Private visibility: PASS
+Deleted content safety: PASS
+Follower graph: PARTIAL
+
+Overall: PARTIAL
+Report: portability-report.json
+
+# Exit code: 1 in strict CI mode because at least one check is PARTIAL.
