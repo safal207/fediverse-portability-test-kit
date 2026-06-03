@@ -1,5 +1,11 @@
 # Fediverse Portability Test Kit
 
+[![Tests](https://github.com/safal207/fediverse-portability-test-kit/actions/workflows/test.yml/badge.svg)](https://github.com/safal207/fediverse-portability-test-kit/actions/workflows/test.yml)
+![Status](https://img.shields.io/badge/status-pre--alpha-orange)
+![Scope](https://img.shields.io/badge/scope-local--fixture-blue)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![Release](https://img.shields.io/github/v/release/safal207/fediverse-portability-test-kit)
+
 **Can a user safely leave one server and move to another?**
 
 Fediverse Portability Test Kit is an open-source QA test suite for export, import, migration, restore, and privacy checks across federated and self-hosted services.
