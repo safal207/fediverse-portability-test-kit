@@ -20,9 +20,35 @@ The project is not a hosted migration service. It checks whether the road for mi
 
 The current repository already contains a runnable local fixture CLI, JSON report schema, schema validation test, check catalog, public report model, and reviewer documentation. The requested grant would develop this into a stronger fixture engine, comparison layer, adapter boundary, CI integration path, and community-reviewed portability evidence model.
 
+## Relevant background
+
+The applicant has long-term practical experience in software quality assurance, manual testing, product analysis, and financial technology systems. This background is directly relevant because the project is fundamentally a QA infrastructure project: it defines expected behavior, creates reproducible scenarios, compares expected vs actual outcomes, reports failures, and communicates risks clearly.
+
+The applicant's contribution to this project is the initial concept, repository structure, test model, runnable CLI skeleton, report schema direction, documentation, and grant-preparation materials. The project intentionally starts from the applicant's QA strengths rather than claiming to be a full production Fediverse migration platform from day one.
+
 ## Requested amount
 
 EUR 40,000.
+
+## Budget use and effort breakdown
+
+Requested budget: EUR 40,000.
+
+Approximate effort model: 80 person-days at an average rate of EUR 500/day, including design, implementation, testing, documentation, community feedback, and grant reporting.
+
+Breakdown:
+
+1. Runnable report skeleton and schema validation — EUR 6,000, about 12 days
+2. Fixture dataset and comparison engine — EUR 10,000, about 20 days
+3. Check expansion and CI-grade validation — EUR 8,000, about 16 days
+4. Adapter interface and Mastodon-style experimental path — EUR 8,000, about 16 days
+5. Public report model, documentation, compatibility matrix, and community feedback — EUR 8,000, about 16 days
+
+Total: EUR 40,000.
+
+## Other funding sources
+
+No other funding sources are currently committed for this project.
 
 ## What problem are you solving?
 
