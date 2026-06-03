@@ -33,6 +33,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="portability-report.json",
         help="Path to write the machine-readable JSON report.",
     )
+    run.add_argument(
+        "--fail-on-partial",
+        action="store_true",
+        help="Return a non-zero exit code when any check is PARTIAL. Useful for strict CI gates.",
+    )
     return parser
 
 
@@ -43,8 +48,11 @@ def run_command(args: argparse.Namespace) -> int:
     print(render_summary(report, output_path))
 
     summary = report["summary"]
-    # PARTIAL is still a successful command execution. FAIL returns non-zero.
-    return 1 if summary["failed"] else 0
+    if summary["failed"]:
+        return 1
+    if args.fail_on_partial and summary["partial"]:
+        return 1
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
