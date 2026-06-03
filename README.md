@@ -88,7 +88,8 @@ Start here:
 4. Read [`docs/PORTABILITY_TEST_MODEL.md`](docs/PORTABILITY_TEST_MODEL.md).
 5. Inspect [`schemas/portability-report.schema.json`](schemas/portability-report.schema.json).
 6. Run the local fixture and inspect the generated report.
-7. Read [`docs/BUDGET_AND_MILESTONES.md`](docs/BUDGET_AND_MILESTONES.md).
+7. Inspect [`examples/public-report-summary.md`](examples/public-report-summary.md).
+8. Read [`docs/BUDGET_AND_MILESTONES.md`](docs/BUDGET_AND_MILESTONES.md).
 
 ## Install and run the local fixture
 
@@ -116,7 +117,14 @@ The command exits with:
 
 - `0` when the run completes without failed checks, including `PARTIAL` evidence;
 - `1` when at least one check fails;
+- `1` when `--fail-on-partial` is enabled and at least one check is `PARTIAL`;
 - `2` for command usage errors.
+
+Strict CI mode:
+
+```bash
+fediverse-portability-test run --fixture mastodon-like --fail-on-partial
+```
 
 ## Example report shape
 
@@ -156,7 +164,11 @@ Followers migration: PARTIAL
 Deleted content handling: PASS
 ```
 
-For details, see [`docs/BADGE_MODEL.md`](docs/BADGE_MODEL.md) and [`docs/SERVER_OPERATOR_GUIDE.md`](docs/SERVER_OPERATOR_GUIDE.md).
+For details, see [`docs/BADGE_MODEL.md`](docs/BADGE_MODEL.md), [`docs/COMPATIBILITY_MATRIX_TEMPLATE.md`](docs/COMPATIBILITY_MATRIX_TEMPLATE.md), and [`docs/SERVER_OPERATOR_GUIDE.md`](docs/SERVER_OPERATOR_GUIDE.md).
+
+## Contributor path
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for local setup, strict CI mode, adding checks, adding fixtures, and future adapter safety rules.
 
 ## Why this matters
 
