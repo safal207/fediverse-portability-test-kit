@@ -33,7 +33,7 @@ fediverse-portability-test run --fixture mastodon-like --fail-on-partial
 
 ## CI status
 
-GitHub Actions workflow `Tests` was manually checked from the GitHub UI and reported green before submission preparation continued.
+GitHub Actions workflow `Tests` was manually checked from the GitHub UI and reported green after the latest pre-submission updates.
 
 ## What already exists
 
@@ -115,14 +115,15 @@ The requested grant would turn the current runnable skeleton into a stronger ope
 
 ## Submission readiness status
 
-Current status: close to submission-ready, pending final applicant review.
+Current status: submission-ready pending final applicant review.
 
 Confirmed pre-submit evidence:
 
-- GitHub Actions workflow `Tests` reported green in the GitHub UI.
+- GitHub Actions workflow `Tests` reported green in the GitHub UI after the latest pre-submission updates.
 - Local runnable proof is documented.
 - Schema validation is part of the test suite.
 - Strict CI mode is implemented.
+- Budget, other funding, relevant background, and GenAI disclosure are documented.
 
 Remaining pre-submit tasks:
 
