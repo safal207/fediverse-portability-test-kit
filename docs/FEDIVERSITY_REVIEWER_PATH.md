@@ -6,6 +6,10 @@
 
 Repository: https://github.com/safal207/fediverse-portability-test-kit
 
+Application: `2026-08-012`
+
+Requested amount: EUR 40,000
+
 ## One-sentence summary
 
 Fediverse Portability Test Kit is an open-source QA suite that tests whether users can safely export, migrate, restore, and validate their data across federated and self-hosted services.
@@ -55,54 +59,78 @@ The project contributes:
 
 Start here:
 
-1. Read this file.
-2. Read `docs/FEDIVERSITY_ALIGNMENT.md`.
-3. Read `docs/PORTABILITY_TEST_MODEL.md`.
-4. Inspect `schemas/portability-report.schema.json`.
-5. Inspect `examples/export-import-fixture/sample-report.json`.
-6. Read `docs/BUDGET_AND_MILESTONES.md`.
+1. Read [`GRANT_EVIDENCE_INDEX.md`](GRANT_EVIDENCE_INDEX.md).
+2. Read this file.
+3. Read [`FEDIVERSITY_ALIGNMENT.md`](FEDIVERSITY_ALIGNMENT.md).
+4. Read [`PORTABILITY_TEST_MODEL.md`](PORTABILITY_TEST_MODEL.md).
+5. Inspect [`../schemas/portability-report.schema.json`](../schemas/portability-report.schema.json).
+6. Run the local fixture and inspect the generated report.
+7. Read [`BUDGET_AND_MILESTONES.md`](BUDGET_AND_MILESTONES.md).
 
 ## Current repository status
 
-This repository is an early skeleton for a grant proposal.
+The repository contains a runnable **synthetic local baseline**:
 
-It currently defines:
+- installable Python package and CLI;
+- `mastodon-like` local fixture;
+- JSON report generation;
+- report schema v0.1 and schema validation;
+- human-readable summary;
+- documented `PASS`, `PARTIAL`, `FAIL`, and `SKIP` semantics;
+- strict `--fail-on-partial` mode;
+- media, privacy, deleted-content, and relationship checks;
+- CI workflow and unit tests;
+- reviewer, operator, badge, and compatibility-matrix documentation.
 
-- the project problem;
-- reviewer path;
-- Fediversity alignment;
-- portability test model;
-- report schema;
-- sample report;
-- budget and milestones.
+The current baseline does **not** claim production Mastodon compatibility. Real-service adapters and broader comparison logic are grant-funded transitions.
 
-It does not yet claim a production runner, real-service adapters, or compliance certification.
+## Reviewer command path
+
+```bash
+git clone https://github.com/safal207/fediverse-portability-test-kit.git
+cd fediverse-portability-test-kit
+python -m pip install -e .
+fediverse-portability-test run --fixture mastodon-like --output portability-report.json
+```
+
+Strict mode:
+
+```bash
+fediverse-portability-test run --fixture mastodon-like --fail-on-partial
+```
+
+Expected high-level story:
+
+```text
+controlled fixture
+  -> export/import simulation
+  -> check-level evidence
+  -> schema-valid JSON report
+  -> explicit PASS / PARTIAL / FAIL / SKIP
+```
 
 ## Target grant outcome
 
-The grant will produce:
+The grant will turn the baseline into a broader QA toolkit with:
 
-- CLI runner;
-- local fixture tests;
-- report schema v0.1;
-- adapter interface;
-- Mastodon-like fixture;
-- export/import roundtrip tests;
-- media and privacy checks;
-- public documentation;
-- compatibility matrix template;
-- final reviewer report.
+- stronger fixture datasets and comparison logic;
+- an explicit service adapter interface;
+- a safe experimental Mastodon-style path;
+- expanded privacy, media, deletion, and relationship checks;
+- CI integration examples;
+- public evidence reports and compatibility matrix;
+- community review and external feedback.
 
 ## Success criteria
 
 A reviewer or developer should be able to:
 
-- clone the repository;
-- run a fixture-based test;
-- generate a portability report;
-- inspect PASS, FAIL, and PARTIAL results;
-- understand how a real service adapter would connect;
-- see how the test kit helps server operators improve portability.
+- clone and run the repository from a clean environment;
+- generate a schema-valid portability report;
+- inspect positive, negative, partial, and unsupported outcomes;
+- understand what is synthetic and what is real-service evidence;
+- see how an adapter connects without unsafe production claims;
+- understand how public evidence helps users evaluate migration risk.
 
 ## Non-goals
 
@@ -114,6 +142,19 @@ This project will not initially:
 - replace existing service migration tools;
 - perform production security audits;
 - claim universal compatibility across all federated protocols.
+
+## Temporal claim boundary
+
+```text
+implemented now:
+  synthetic fixture + CLI + report schema + documented checks
+
+grant-funded next:
+  stronger comparison engine + safe adapter path + external validation
+
+not claimed:
+  universal production compatibility or certification
+```
 
 ## Project phrase
 
