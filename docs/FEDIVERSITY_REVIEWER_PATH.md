@@ -52,7 +52,7 @@ The project contributes:
 - privacy-preservation checks;
 - fixture-based local validation;
 - adapter model for real services;
-- compatibility matrix roadmap;
+- compatibility matrix and public badge model;
 - clear non-claims and limitations.
 
 ## Reviewer quick path
@@ -64,8 +64,9 @@ Start here:
 3. Read [`FEDIVERSITY_ALIGNMENT.md`](FEDIVERSITY_ALIGNMENT.md).
 4. Read [`PORTABILITY_TEST_MODEL.md`](PORTABILITY_TEST_MODEL.md).
 5. Inspect [`../schemas/portability-report.schema.json`](../schemas/portability-report.schema.json).
-6. Run the local fixture and inspect the generated report.
-7. Read [`BUDGET_AND_MILESTONES.md`](BUDGET_AND_MILESTONES.md).
+6. Inspect [`COMPATIBILITY_MATRIX_TEMPLATE.md`](COMPATIBILITY_MATRIX_TEMPLATE.md) and [`BADGE_MODEL.md`](BADGE_MODEL.md).
+7. Run the local fixture and inspect the generated report.
+8. Read [`BUDGET_AND_MILESTONES.md`](BUDGET_AND_MILESTONES.md).
 
 ## Current repository status
 
