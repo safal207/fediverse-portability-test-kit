@@ -38,6 +38,7 @@ problem definition
   -> runnable synthetic fixture
   -> schema-valid report
   -> documented PASS / PARTIAL / FAIL / SKIP semantics
+  -> compatibility matrix template and badge evidence model
 ```
 
 Grant-funded transition:
@@ -60,7 +61,7 @@ synthetic fixture
 | Media integrity is checked | Digest-oriented local fixture path | Implemented baseline | Expand media dataset and comparison engine | Changed media produces a deterministic failure |
 | Relationship portability is represented | Follower/following graph check reports `PARTIAL` where evidence is incomplete | Implemented baseline | Improve graph fixtures and adapter support | Unsupported migration remains visible, never silently passes |
 | Real Fediverse services can be tested safely | Adapter boundary and operator guidance are documented | Planned / partial | Build experimental adapter path and cleanup rules | Unsupported checks return `SKIP` or `PARTIAL`; test accounts are cleaned safely |
-| Results can help users compare servers | Badge model, public report summary, and compatibility-matrix template | Documented | Validate wording and collect community feedback | Public output states evidence and limitations without certification overclaim |
+| Results can help users compare servers | `docs/COMPATIBILITY_MATRIX_TEMPLATE.md` and `docs/BADGE_MODEL.md` | Implemented documentary baseline | Validate wording with external operators | Public output links source evidence and avoids certification overclaim |
 | External ecosystem feedback exists | Public issues and contribution path | Pending | Engage maintainers and operators | At least one external review is captured publicly |
 
 ## Reviewer commands
